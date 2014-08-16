@@ -110,7 +110,7 @@ jQuery(window).load(function($) {
             });  
         }  
     });
-	
+
 	jQuery('nav#main-nav').on("click", "li", function() {
 		if (jQuery(window).width() < 1025) {
 			if (jQuery(this).find("ul").length > 0) {

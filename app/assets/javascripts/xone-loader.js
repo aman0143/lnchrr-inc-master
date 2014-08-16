@@ -47,7 +47,6 @@ jQuery(window).load(function($) {
 		jQuery( ".ajax-content" ).load( url + ' #portfolio-single', function(response, status) {
 			
 			jQuery( ".ajax-content" ).css({opacity: 1});
-			
 			if (status == 'success') {
 				
 				if (!activeproject) { 

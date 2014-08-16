@@ -27,7 +27,8 @@
 			
 		<!-- Google Analytics -->
     	<%= analytics_init if Rails.env.production? %><meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+        
 </head>
 <body>
 
@@ -59,18 +60,25 @@
 					<!-- Logged in Header-->
 						<% if defined?(Devise) %>
       					 <% if user_signed_in? %>
-								<nav id="main-nav">
-								  <ul><li>
-										<a href="#"> Welcome </a>
-										<ul class="sub-menu"> 
-										<!-- MAKE THIS A CLICK INSTEAD OF HOVER -->
-           							    <li><%= link_to "My Projects", my_project_posts_path %></li></li>
-									    <li><%= link_to "My Account", edit_user_registration_path %></li>
-										</li> <% x = 7 %>
-										<li><%= link_to "Messages", inbox_posts_path %></li></li>
-										<li><%#= current_user.received_messages.count %></li>
-										<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li></li></ul></li>
-								  </ul>
+
+
+						<div id="ui_element" class="m_wrapper">
+						<ul>
+						<!-- MAKE THIS A CLICK INSTEAD OF HOVER -->
+						<li><%= link_to "My Projects", my_project_posts_path %></li></li>
+						<li><%= link_to "My Account", edit_user_registration_path %></li>
+						</li> <% x = 7 %>
+						<li><%= link_to "Messages", inbox_posts_path %></li></li>
+						<li><%#= current_user.received_messages.count %></li>
+						<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li></li>
+						</ul>
+						<div class="m_itemMain m_up">Welcome</div>
+						</div>
+						<script type="text/javascript">
+							makeNavHover();
+						</script>
+
+								
 							<% else %>
 								<nav id="main-nav"><ul>
 		  							   <li><%= link_to "Login", new_user_session_path %></li>
@@ -205,6 +213,7 @@
 				} );
 
 			</script>
+
                 
 
 </body>

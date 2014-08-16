@@ -21,5 +21,5 @@
 //= gridGallery.min
 //= jquery.modernizr.min.js
 //= require ckeditor/init
+//= require dropdown
 //= require_tree .
-
